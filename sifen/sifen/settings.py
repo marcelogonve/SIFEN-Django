@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'autenticacion.apps.AutenticacionConfig',
     'facturacion.apps.FacturacionConfig',
     'comunicacion.apps.ComunicacionConfig',
+    'cliente.apps.ClienteConfig',
 ]
 
 MIDDLEWARE = [

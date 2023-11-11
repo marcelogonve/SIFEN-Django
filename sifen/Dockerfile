@@ -1,4 +1,4 @@
-# Imagen oficial de python como imagen base
+# Imagen oficial de Python como imagen base
 FROM python:3.10
 
 # Directorio de trabajo dentro del contenedor
@@ -8,11 +8,18 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Se copia el contenido del directorio actual al directorio de trabajo
-COPY  . .
+# Se copian los archivos restantes del proyecto
+COPY . .
+
+# Copiar el script de entrada y dar permisos de ejecución
+COPY entrypoint.sh /app/
+RUN chmod +x /app/entrypoint.sh
 
 # Se expone el puerto 8000
 EXPOSE 8000
 
-# Se ejecuta el comando para iniciar el servidor
+# Configurar el script de entrada como punto de entrada
+ENTRYPOINT ["/app/entrypoint.sh"]
+
+# Comando por defecto para iniciar el servidor Django
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
