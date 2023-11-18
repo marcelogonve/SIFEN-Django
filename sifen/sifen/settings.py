@@ -41,10 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Añadimos las apps necesarias para el proyecto
-    'autenticacion.apps.AutenticacionConfig',
-    'facturacion.apps.FacturacionConfig',
-    'comunicacion.apps.ComunicacionConfig',
-    'cliente.apps.ClienteConfig',
 ]
 
 MIDDLEWARE = [
@@ -89,11 +85,11 @@ DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME', 'sifen'),
-        'USER': os.environ.get('DB_USER', 'postgres'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'postgres'),
-        'HOST': os.environ.get('DB_HOST', 'localhost'),
-        'PORT': os.environ.get('DB_PORT', 5432),
+        'NAME': os.environ.get('DATABASE_NAME', 'sifen'),
+        'USER': os.environ.get('DATABASE_USER', 'sifen_db'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'sifen@set'),
+        'HOST': os.environ.get('DATABASE_HOST', 'localhost'),
+        'PORT': os.environ.get('DATABASE_PORT', 5432),
     }
 }
 

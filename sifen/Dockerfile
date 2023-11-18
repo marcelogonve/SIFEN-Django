@@ -1,6 +1,9 @@
 # Imagen oficial de Python como imagen base
 FROM python:3.10
 
+# Actualiza los paquetes e instala el cliente de PostgreSQL
+RUN apt-get update && apt-get install -y postgresql-client
+
 # Directorio de trabajo dentro del contenedor
 WORKDIR /app
 
