@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Añadimos las apps necesarias para el proyecto
+    'sifen.models.emisor',
+    'sifen.models.receptor',
+    'sifen.models.factura',
+    'sifen.models.detalleFactura',
 ]
 
 MIDDLEWARE = [
